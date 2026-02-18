@@ -50,3 +50,8 @@ logs:
     storageClassName: manual
     ## the name of an existing PVC to use
     existingClaim: airflow-logs-pvc
+
+
+serviceAccount:
+  create: false
+  name: airflow-sa

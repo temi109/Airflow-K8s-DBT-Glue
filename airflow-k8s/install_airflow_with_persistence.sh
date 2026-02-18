@@ -22,6 +22,10 @@ docker build --pull --tag $IMAGE_NAME:$IMAGE_TAG -f cicd/Dockerfile .
 kind load docker-image $IMAGE_NAME:$IMAGE_TAG --name airflow-cluster
 
 
+docker build -t airflow-dbt:latest .
+kind load docker-image airflow-dbt:latest --name airflow-cluster
+
+
 # Create a namespace for airflow
 
 kubectl create namespace $NAMESPACE
