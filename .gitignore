@@ -1,0 +1,11 @@
+k8s/secrets/*
+tmp/*
+.env
+*.secrets.yml
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+.vscode
+venv/

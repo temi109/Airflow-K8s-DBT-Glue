@@ -1,0 +1,1 @@
+{"_invocation_id": "822b573f-d882-4785-8147-ac35d1af39cb", "linked": {"0": {"name": "source.ecommerce_dbt.bronze.customers", "type": "source", "succ": [1]}, "1": {"name": "model.ecommerce_dbt.test", "type": "model"}}}
