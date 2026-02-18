@@ -1,6 +1,9 @@
 from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
 from datetime import datetime
+import datetime
+import time
+from airflow.sdk import DAG, task
 
 
 with DAG(
@@ -9,8 +12,9 @@ with DAG(
     schedule=None,
     catchup=False,
 ):
-
-    dbt_run = KubernetesPodOperator(
+    @task
+    def test():
+        dbt_run = KubernetesPodOperator(
         task_id="run_dbt",
         name="dbt-runner",
         namespace="default",
@@ -20,3 +24,5 @@ with DAG(
         get_logs=True,
         is_delete_operator_pod=True,
     )
+        
+    test()

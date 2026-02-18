@@ -30,7 +30,7 @@ dags:
     # git repo clone url
     # ssh example: git@github.com:apache/airflow.git
     # https example: https://github.com/apache/airflow.git
-    repo: https://github.com/temi109/Kubernetes-Airflow.git
+    repo: https://github.com/temi109/Airflow-K8s-DBT-Glue.git
     branch: main
     rev: HEAD
     # Git branch you're currently using
@@ -38,7 +38,7 @@ dags:
     depth: 1
     # the number of consecutive failures allowed before aborting
     maxFailures: 0
-    subPath: "dags"
+    subPath: "airflow-k8s/dags"
     credentialsSecret: git-credentials
 
 
