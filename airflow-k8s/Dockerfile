@@ -9,12 +9,11 @@ RUN apt-get update && apt-get install -y git gcc
 RUN pip install --no-cache-dir \
     dbt-glue==1.10.15 \
     dbt-core==1.10.15
-
+    
 # copy project
-# COPY ./dags/ecommerce_dbt /opt/airflow/ecommerce_dbt
+COPY ./dags/ecommerce_dbt /opt/airflow/ecommerce_dbt
 
 # dbt expects this
-ENV DBT_PROFILES_DIR=/opt/airflow/dags/repo/airflow-k8s/dags/ecommerce_dbt
-
+ENV DBT_PROFILES_DIR=/opt/airflow/ecommerce_dbt
 
 CMD ["dbt", "run"]
