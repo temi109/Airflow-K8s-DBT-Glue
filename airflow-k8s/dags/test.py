@@ -25,7 +25,8 @@ with DAG(
             """
             cd /opt/airflow/ecommerce_dbt &&
             dbt deps &&
-            dbt run
+            dbt run &&
+            sleep infinity
             """
         ],
         get_logs=True,
