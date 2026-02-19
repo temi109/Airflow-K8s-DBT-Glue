@@ -1,4 +1,4 @@
-executor: "KubernetesExecutor"
+executor: "CeleryExecutor"
 
 # Images
 images:
