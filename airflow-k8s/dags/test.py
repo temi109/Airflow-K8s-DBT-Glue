@@ -19,8 +19,12 @@ with DAG(
         name="dbt-runner",
         namespace="airflow",
         image="airflow-dbt:latest",
-        image_pull_policy="IfNotPresent",
-        cmds=["dbt", "run"],
+        cmds=["bash", "-c"],
+        arguments=[
+            """dbt run --project-dir /opt/airflow/ecommerce_dbt --profiles-dir /opt/airflow/ecommerce_dbt
+                pwd && ls -la
+            """
+        ],
         get_logs=True,
         is_delete_operator_pod=True,
         in_cluster=True,
