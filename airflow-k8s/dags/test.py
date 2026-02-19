@@ -23,13 +23,13 @@ with DAG(
         image_pull_policy="IfNotPresent",
         arguments=[
             """
-            cd /opt/airflow/dags/ecommerce_dbt &&
+            cd /opt/airflow/dags/repo/airflow-k8s/dags/ecommerce_dbt && pwd &&
             dbt deps &&
             dbt run
             """
         ],
         get_logs=True,
-        is_delete_operator_pod=False,
+        is_delete_operator_pod=True,
         in_cluster=True,
     )
 
