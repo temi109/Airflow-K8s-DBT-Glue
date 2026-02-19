@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y git gcc
 
 # install dbt + athena adapter
 RUN pip install --no-cache-dir \
-    apache-airflow>=3.1.7 \
     dbt-glue==1.10.15 \
     dbt-core==1.10.15
+    
 # copy project
 COPY ./dags/ecommerce_dbt /opt/airflow/ecommerce_dbt
 

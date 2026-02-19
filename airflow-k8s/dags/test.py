@@ -23,9 +23,9 @@ with DAG(
         image_pull_policy="IfNotPresent",
         arguments=[
             """
-            pwd && ls -la && 
             cd /opt/airflow/ecommerce_dbt &&
-            dbt run --profiles-dir .
+            dbt deps &&
+            dbt run
             """
         ],
         get_logs=True,
