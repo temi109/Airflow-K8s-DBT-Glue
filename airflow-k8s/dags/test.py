@@ -23,7 +23,7 @@ with DAG(
         image_pull_policy="IfNotPresent",
         arguments=[
             """
-            cd /opt/airflow/ecommerce_dbt &&
+            cd /opt/airflow/dags/repo/airflow-k8s/dags/ecommerce_dbt &&
             dbt deps &&
             dbt run
             """
