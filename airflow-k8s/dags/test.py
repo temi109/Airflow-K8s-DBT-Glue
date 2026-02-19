@@ -19,6 +19,7 @@ with DAG(
         name="dbt-runner",
         namespace="airflow",
         image="airflow-dbt:latest",
+        image_pull_policy="IfNotPresent",
         cmds=["bash"],
         arguments=["-c", "sleep infinity"],
         get_logs=True,
