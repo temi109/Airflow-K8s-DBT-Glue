@@ -35,6 +35,8 @@ kubectl create namespace $NAMESPACE
 
 kubectl apply -f k8s/secrets/git-secrets.yml
 
+kubectl apply -f k8s/secrets/aws-credentials.yml
+
 # Apply Kubernetes volumes for airflow logs persistence
 
 kubectl apply -f k8s/volumes/airflow-logs-pv.yaml
