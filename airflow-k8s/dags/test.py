@@ -19,16 +19,8 @@ with DAG(
         name="dbt-runner",
         namespace="airflow",
         image="airflow-dbt:latest",
-        cmds=["bash", "-c"],
-        image_pull_policy="IfNotPresent",
-        arguments=[
-            """
-            cd /opt/airflow/ecommerce_dbt &&
-            dbt deps &&
-            dbt run &&
-            sleep infinity
-            """
-        ],
+        cmds=["bash"],
+        arguments=["-c", "sleep infinity"],
         get_logs=True,
         is_delete_operator_pod=False,
         in_cluster=True,
