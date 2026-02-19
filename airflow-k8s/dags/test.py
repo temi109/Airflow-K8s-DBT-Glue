@@ -19,6 +19,7 @@ with DAG(
         name="dbt-runner",
         namespace="airflow",
         image="airflow-dbt:latest",
+        image_pull_policy="IfNotPresent",
         cmds=["dbt", "run"],
         get_logs=True,
         is_delete_operator_pod=True,
