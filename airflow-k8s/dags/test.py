@@ -22,8 +22,10 @@ with DAG(
         cmds=["bash", "-c"],
         image_pull_policy="IfNotPresent",
         arguments=[
-            """dbt run --project-dir /opt/airflow/ecommerce_dbt --profiles-dir /opt/airflow/ecommerce_dbt
-                pwd && ls -la
+            """
+            pwd && ls -la && 
+            cd /opt/airflow/ecommerce_dbt &&
+            dbt run --profiles-dir .
             """
         ],
         get_logs=True,
