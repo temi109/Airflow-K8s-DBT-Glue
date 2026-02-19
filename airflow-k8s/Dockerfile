@@ -14,6 +14,7 @@ RUN pip install --no-cache-dir \
 # COPY ./dags/ecommerce_dbt /opt/airflow/ecommerce_dbt
 
 # dbt expects this
-ENV DBT_PROFILES_DIR=/opt/airflow/ecommerce_dbt
+ENV DBT_PROFILES_DIR=/opt/airflow/dags/repo/airflow-k8s/dags/ecommerce_dbt
+
 
 CMD ["dbt", "run"]
