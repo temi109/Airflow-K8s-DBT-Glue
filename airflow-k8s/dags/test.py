@@ -58,7 +58,12 @@ with DAG(
             ),
             V1EnvVar(
                 name="AWS_DEFAULT_REGION",
-                value="us-east-1"  # replace with your AWS region
+                value_from=V1EnvVarSource(
+                    secret_key_ref=V1SecretKeySelector(
+                        name="aws-credentials",
+                        key="AWS_DEFAULT_REGION"
+                    )
+                )
             ),
         ],
     )
