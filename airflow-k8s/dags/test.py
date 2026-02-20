@@ -33,9 +33,12 @@ with DAG(
         image="airflow-dbt:latest",
         image_pull_policy="IfNotPresent",
         cmds=["bash"],
-        arguments=["-c", "sleep infinity"],
+        arguments=["""
+                cd /opt/airflow/ecommerce_dbt &&
+                dbt deps &&
+                dbt run
+                   """],
         get_logs=True,
-        is_delete_operator_pod=False,
         in_cluster=True,
         env_vars=[
             V1EnvVar(
