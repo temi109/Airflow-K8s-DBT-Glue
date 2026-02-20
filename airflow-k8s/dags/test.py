@@ -34,8 +34,9 @@ with DAG(
         image_pull_policy="IfNotPresent",
         cmds=["bash"],
         arguments=["""
-                cd ecommerce_dbt &&
-                dbt deps &&
+                cd ecommerce_dbt && \
+                dbt clean && \
+                dbt deps && \
                 dbt run
                    """],
         get_logs=True,
