@@ -34,7 +34,7 @@ with DAG(
         image_pull_policy="IfNotPresent",
         cmds=["bash"],
         arguments=["""
-                cd /opt/airflow/ecommerce_dbt &&
+                cd /ecommerce_dbt &&
                 dbt deps &&
                 dbt run
                    """],
