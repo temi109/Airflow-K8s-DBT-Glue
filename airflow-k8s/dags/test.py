@@ -32,7 +32,7 @@ with DAG(
         namespace="airflow",
         image="airflow-dbt:latest",
         image_pull_policy="IfNotPresent",
-        cmds=["bash"],
+        cmds=["bash", "-c"],
         arguments=["""
                 cd ecommerce_dbt && \
                 dbt clean && \
