@@ -38,11 +38,11 @@ The pipeline architecture separates orchestration, transformation, and compute i
 
 # Architecture
 
-  <a href="https://github.com/temi109/Airflow-K8s-DBT-Glue.git">
-    <img src="https://github.com/temi109/Airflow-K8s-DBT-Glue/blob/main/images/Airflow%20%2B%20Kubernetes%20%2B%20dbt%20%2B%20AWS%20Glue%20Data%20Platform.png" alt="Logo" width="3000" height="3000">
+<p align="center">
+  <a href="https://raw.githubusercontent.com/temi109/Airflow-K8s-DBT-Glue/main/images/Airflow%20%2B%20Kubernetes%20%2B%20dbt%20%2B%20AWS%20Glue%20Data%20Platform.png">
+    <img src="https://raw.githubusercontent.com/temi109/Airflow-K8s-DBT-Glue/main/images/Airflow%20%2B%20Kubernetes%20%2B%20dbt%20%2B%20AWS%20Glue%20Data%20Platform.png" width="100%">
   </a>
-
-
+</p>
 
 
 # Data Pipeline Flow
